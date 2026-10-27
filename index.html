@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ca">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pneum&agrave;tics SAM &ndash; Andorra</title>
+  <link rel="alternate" hreflang="ca" href="https://maarcguiu.github.io/SAM/ca/index.html">
+  <link rel="alternate" hreflang="es" href="https://maarcguiu.github.io/SAM/es/index.html">
+  <link rel="alternate" hreflang="fr" href="https://maarcguiu.github.io/SAM/fr/index.html">
+  <link rel="alternate" hreflang="en" href="https://maarcguiu.github.io/SAM/en/index.html">
+  <link rel="alternate" hreflang="x-default" href="https://maarcguiu.github.io/SAM/ca/index.html">
+  <script>
+    (function () {
+      var langs = ['ca', 'es', 'fr', 'en'], pick = 'ca';
+      try { var saved = localStorage.getItem('lang'); if (langs.indexOf(saved) > -1) pick = saved; else throw 0; }
+      catch (e) {
+        var nav = (navigator.languages || [navigator.language || 'ca']);
+        for (var i = 0; i < nav.length; i++) { var c = String(nav[i]).slice(0, 2).toLowerCase(); if (langs.indexOf(c) > -1) { pick = c; break; } }
+      }
+      location.replace(pick + '/index.html');
+    })();
+  </script>
+  <style>body{background:#0b0c0e;color:#f3f2ef;font-family:system-ui,sans-serif;display:grid;place-items:center;min-height:100vh;margin:0}a{color:#e3261b;margin:0 .6rem}</style>
+</head>
+<body>
+  <p><a href="ca/index.html">Catal&agrave;</a><a href="es/index.html">Espa&ntilde;ol</a><a href="fr/index.html">Fran&ccedil;ais</a><a href="en/index.html">English</a></p>
+</body>
+</html>
