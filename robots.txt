@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://maarcguiu.github.io/SAM/sitemap.xml
+Sitemap: https://www.pneumaticsandorra.com/sitemap.xml
