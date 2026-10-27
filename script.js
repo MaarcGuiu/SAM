@@ -207,7 +207,9 @@ document.querySelectorAll('.map[data-map]').forEach(map => {
     form.action = `https://formsubmit.co/${d.mail}`;
     const name = form.querySelector('.dest-name'), detail = form.querySelector('.dest-detail');
     if (name) name.textContent = d.name;
-    if (detail) detail.textContent = `WhatsApp ${fmtPhone(d.wa)} · ${d.mail}`;
+    if (detail) detail.textContent = d.wa ? `WhatsApp ${fmtPhone(d.wa)} · ${d.mail}` : d.mail;
+    // Workshops without WhatsApp (data-wa="") only get the email option
+    form.querySelector('.wa-send').hidden = !d.wa;
   }
   tallerSelect.addEventListener('change', updateDest);
 
@@ -221,7 +223,7 @@ document.querySelectorAll('.map[data-map]').forEach(map => {
 
   // WhatsApp: build a readable message with the label of each filled-in field
   form.querySelector('.wa-send').addEventListener('click', () => {
-    if (!valid()) return;
+    if (!dest().wa || !valid()) return;
     const lines = [form.dataset.waIntro, ''];
     form.querySelectorAll('.field').forEach(f => {
       const input = f.querySelector('input:not([type=checkbox]), select, textarea');
